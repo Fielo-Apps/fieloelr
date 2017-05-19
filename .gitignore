@@ -1,0 +1,17 @@
+.DS_Store
+*.sublime-project
+*.sublime-settings
+*.sublime-workspace
+build.properties
+build.xml
+ant-salesforce.jar
+retrieveunpackaged
+retrieveunpackaged.zip2
+npm-debug.log
+destructiveChanges.xml
+config
+resource-bundles/
+raw/node_modules/
+raw/coverage/
+raw/docs/
+raw/resources/FieloSalesforce_Backend

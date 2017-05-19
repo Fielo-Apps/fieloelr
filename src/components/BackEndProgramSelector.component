@@ -1,0 +1,4 @@
+<apex:component layout="none" controller="BackEndProgramSelectorController" allowDML="true" >
+  	<div class="slds-text-title--caps {!IF( programs.size == 1, 'slds-hide', '')}">{!$Label.fieloelr__changeprogram}</div>
+     <c:Picklist fieldName="program-selector"  picklistEntries="{!programs}" className="slds-form-element fielosf-program-selector-elr {!IF( programs.size == 1, 'slds-hide', '')}" onchange="FieloProgramSelectorELR" showLabel="false" emptyString="{!program.Name}" value="{!program.Id}" required="true"/>
+</apex:component>

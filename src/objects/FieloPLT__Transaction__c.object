@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Actions that grant Points, Badges o Rewards to Members in exchange of a specific actions performed.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>FieloPLT__AdjustTransaction</fullName>
+        <availableFields>
+            <field>FieloPLT__Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>TransactionAdjustment</description>
+        <label>Adjustment Transaction</label>
+    </fieldSets>
+    <fields>
+        <fullName>FieloPLT__Action__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Automatically generated related Action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Action.</inlineHelpText>
+        <label>Action</label>
+        <referenceTo>FieloPLT__Action__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Date__c</fullName>
+        <defaultValue>now()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Transaction date and time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Choose Transaction date and time.</inlineHelpText>
+        <label>Date &amp; Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It shows the Event which generated the Transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event which generated the Transaction.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>FieloPLT__Event__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsOffline__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When ticked, Transaction is processed offline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When ticked, Transaction is processed offline.</inlineHelpText>
+        <label>Offline</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsProcessed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When ticked, Transactions were processed by the Rule Engine.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When ticked, Transactions were processed.</inlineHelpText>
+        <label>Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsReverted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When ticked, Transactions were reverted by the Rule Engine.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When ticked, Transactions were reverted.</inlineHelpText>
+        <label>Reverted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Member__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It shows the Member who generated the Transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the Member who generated the Transaction.</inlineHelpText>
+        <label>Member</label>
+        <referenceTo>FieloPLT__Member__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__PointCost__c</fullName>
+        <deprecated>false</deprecated>
+        <description>It shows the result of &quot;Points&quot; from a Transaction multiplied by the &quot;Point Cost&quot; established in &quot;Program&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Result of Transaction &quot;Points&quot; multiplied by the &quot;Point Cost&quot; established in &quot;Program&quot;.</inlineHelpText>
+        <label>Point Cost</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Points__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Transaction Points.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the number of Transaction Points.</inlineHelpText>
+        <label>Points</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__RevertedTransaction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It shows a Transaction that was reverted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Transaction that was reverted.</inlineHelpText>
+        <label>Reverted Transaction</label>
+        <referenceTo>FieloPLT__Transaction__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Reward__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It shows the Reward related to a Transaction.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reward related to a Transaction.</inlineHelpText>
+        <label>Reward</label>
+        <referenceTo>FieloPLT__Reward__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__SkipEngine__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When ticked, Rule Engine is skipped and Members obtain &quot;Points&quot; from Transactions. This field is automatically completed when a Reverted &quot;Transaction&quot; is chosen.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When ticked, Rule Engine is skipped and Members automatically obtain &quot;Points&quot; from Transactions.</inlineHelpText>
+        <label>Skip Engine</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Adjustment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Challenge Reward</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expiration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reversion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Value__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>It shows the Transaction purchase value.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter Transaction purchase value.</inlineHelpText>
+        <label>Value</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ModuleResponse__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Response</label>
+        <referenceTo>ModuleResponse__c</referenceTo>
+        <relationshipLabel>Transactions</relationshipLabel>
+        <relationshipName>Transactions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Transaction</label>
+    <nameField>
+        <displayFormat>T-{0000000}</displayFormat>
+        <label>Transaction Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Transactions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>FieloPLT__ValidateDateTime</fullName>
+        <active>true</active>
+        <description>Transaction date and time must be valid.</description>
+        <errorConditionFormula>ISNULL(FieloPLT__Date__c)</errorConditionFormula>
+        <errorDisplayField>FieloPLT__Date__c</errorDisplayField>
+        <errorMessage>Transaction date and time must be valid.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FieloPLT__ValidateMember</fullName>
+        <active>true</active>
+        <description>A Member must be selected.</description>
+        <errorConditionFormula>(FieloPLT__Member__c == null)</errorConditionFormula>
+        <errorDisplayField>FieloPLT__Member__c</errorDisplayField>
+        <errorMessage>A Member must be selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FieloPLT__ValidateProcessedPoints</fullName>
+        <active>true</active>
+        <description>A processed Transaction cannot have null &quot;Points&quot;.</description>
+        <errorConditionFormula>FieloPLT__IsProcessed__c &amp;&amp; ISNULL(FieloPLT__Points__c)</errorConditionFormula>
+        <errorDisplayField>FieloPLT__Points__c</errorDisplayField>
+        <errorMessage>A processed Transaction cannot have null &quot;Points&quot;.</errorMessage>
+    </validationRules>
+</CustomObject>

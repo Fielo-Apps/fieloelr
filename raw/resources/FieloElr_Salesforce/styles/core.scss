@@ -1,0 +1,35 @@
+.fielosf {
+  .fielosf-criteria {
+    .fielosf-criteria__table {
+      counter-reset: rowNumber;
+      .fielosf-criteria__container > tr > td:first-child {
+        counter-increment: rowNumber;
+        padding-left: 35px;
+      }
+      .fielosf-criteria__container > tr > td:first-child::before {
+        content: counter(rowNumber);
+        top: 14px;
+        position: absolute;
+        left: 19px;
+      }
+      tfoot td:first-child::before {
+        content: '';
+      }
+    }
+  }
+  &.fielosf-batch .slds-table td { // Solo para batch execution
+    white-space: inherit;
+  }
+  .ui-sortable{
+    padding-bottom: 0;
+    .ui-sortable-handle:hover{
+      cursor: move;
+    }
+  }
+  &.fielosf-level-order{
+    .slds-footer{
+      text-align: right;
+      padding: 15px 20px 0 0;
+    }
+  }
+}

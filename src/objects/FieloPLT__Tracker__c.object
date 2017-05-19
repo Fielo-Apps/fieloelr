@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Internal object. It is generated as a result of processing a Challenge Action.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>FieloPLT__Action__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It makes reference to the Action object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It makes reference to the Action object.</inlineHelpText>
+        <label>Action</label>
+        <referenceTo>FieloPLT__Action__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Tracker</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>It evaluates the Initial and Final Date from the Challenge.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It evaluates the Initial and Final Date from the Challenge.</inlineHelpText>
+        <label>Date &amp; Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Event__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Event which generates the Tracker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Event which generates the Tracker.</inlineHelpText>
+        <label>Event</label>
+        <referenceTo>FieloPLT__Event__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Tracker</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsOffline__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If ticked, it shows that Tracker is processed offline.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If ticked, it shows that Tracker is processed offline.</inlineHelpText>
+        <label>Offline</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsProcessed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If ticked, Tracker is processed. Depending on the other Challenge settings and status, several related processes may be triggered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If ticked, Tracker is processed.</inlineHelpText>
+        <label>Processed</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__IsReverted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If ticked, Tracker is reverted thus Points are returned to the Member.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If ticked, Tracker is reverted thus Points are returned to the Member.</inlineHelpText>
+        <label>Reverted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Member__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Member who performed the Action generating the Tracker.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Member who performed the Action generating the Tracker.</inlineHelpText>
+        <label>Member</label>
+        <referenceTo>FieloPLT__Member__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Trackers</relationshipName>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__MissionMember__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>It shows which Member and Mission the Tracker belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>It shows which Member and Mission the Tracker belongs to.</inlineHelpText>
+        <label>Mission Member</label>
+        <referenceTo>FieloPLT__MissionMember__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Trackers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FieloPLT__Transaction__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Transaction</label>
+        <referenceTo>FieloPLT__Transaction__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Trackers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ModuleResponse__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Module Response</label>
+        <referenceTo>ModuleResponse__c</referenceTo>
+        <relationshipLabel>Trackers</relationshipLabel>
+        <relationshipName>Trackers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Tracker</label>
+    <nameField>
+        <displayFormat>T-{0000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Trackers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

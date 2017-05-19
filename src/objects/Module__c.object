@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>ModuleView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ApprovalGrade__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Grade</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>AttemptsAllowedPerQuestion__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempts Allowed per Question</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AttemptsAllowed__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempts Allowed</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Course to which the module belongs.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Course to which the module belongs.</inlineHelpText>
+        <label>Course</label>
+        <referenceTo>Course__c</referenceTo>
+        <relationshipLabel>Modules</relationshipLabel>
+        <relationshipName>Modules</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PenaltyMode__c</fullName>
+        <externalId>false</externalId>
+        <label>Penalty Mode</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percent Decrease</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negative Weight</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>QuestionPool__c</fullName>
+        <externalId>false</externalId>
+        <label>Question Pool</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShuffleQuestions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Shuffle Questions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TotalValue__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Value</label>
+        <summarizedField>Question__c.CorrectWeight__c</summarizedField>
+        <summaryForeignKey>Question__c.Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>WeightedQuestions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Weighted Questions</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <gender>Masculine</gender>
+    <label>Module</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Module Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Modules</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>ApprovalGradeRange</fullName>
+        <active>true</active>
+        <description>Approval grade must be a value between 0 and 100.</description>
+        <errorConditionFormula>OR(ApprovalGrade__c &lt; 0, ApprovalGrade__c &gt; 1)</errorConditionFormula>
+        <errorDisplayField>ApprovalGrade__c</errorDisplayField>
+        <errorMessage>The approval grade must be a value between 0 and 100.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AttemptsAllowedPerQuestionRange</fullName>
+        <active>true</active>
+        <description>The field Attempts Allowed per Question must be a number that can be null or greater than 0.</description>
+        <errorConditionFormula>AND( NOT( ISBLANK(  AttemptsAllowedPerQuestion__c  ) ) ,  AttemptsAllowedPerQuestion__c   &lt;= 0)</errorConditionFormula>
+        <errorDisplayField>AttemptsAllowedPerQuestion__c</errorDisplayField>
+        <errorMessage>When filled, the number of attempts allowed per question must be positive.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>AttemptsAllowedRange</fullName>
+        <active>true</active>
+        <description>The field Attempts Allowed must be a number that can be null or greater than 0.</description>
+        <errorConditionFormula>AND( NOT( ISBLANK( AttemptsAllowed__c ) ) , AttemptsAllowed__c  &lt;= 0)</errorConditionFormula>
+        <errorDisplayField>AttemptsAllowed__c</errorDisplayField>
+        <errorMessage>When filled, the number of attempts allowed must be positive.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CannotChangeCourse</fullName>
+        <active>true</active>
+        <description>The course cannot be changed.</description>
+        <errorConditionFormula>ISCHANGED( Course__c )</errorConditionFormula>
+        <errorDisplayField>Course__c</errorDisplayField>
+        <errorMessage>The course cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CourseMandatory</fullName>
+        <active>true</active>
+        <description>The course field is mandatory.</description>
+        <errorConditionFormula>ISBLANK( Course__c )</errorConditionFormula>
+        <errorDisplayField>Course__c</errorDisplayField>
+        <errorMessage>The course is mandatory.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GradeApprovalIfActive</fullName>
+        <active>true</active>
+        <description>When the module is set to active must validate that the Grade Approval is not null.</description>
+        <errorConditionFormula>AND( IsActive__c , ISBLANK( ApprovalGrade__c ))</errorConditionFormula>
+        <errorDisplayField>ApprovalGrade__c</errorDisplayField>
+        <errorMessage>Active modules must have an approval grade.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoActiveCourseOnCreation</fullName>
+        <active>true</active>
+        <description>A Module cannot be created with a relation to an active Course, and the Course cannot be modified afterwards.</description>
+        <errorConditionFormula>AND( 
+      ISNEW() , 
+      ISPICKVAL(Course__r.Status__c , 
+         &apos;Active&apos;) 
+   )</errorConditionFormula>
+        <errorDisplayField>Course__c</errorDisplayField>
+        <errorMessage>On module creation, course cannot be active.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NoQuestionPoolIfWeightedQuestions</fullName>
+        <active>true</active>
+        <description>The Module cannot have a value for Question Pool and use Weighted Questions.</description>
+        <errorConditionFormula>AND( NOT(ISBLANK(QuestionPool__c)) , WeightedQuestions__c)</errorConditionFormula>
+        <errorMessage>The Module cannot use a Question Pool together with Weighted Questions.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NotActiveIfNew</fullName>
+        <active>true</active>
+        <description>The module cannot be created with status active, as it won&apos;t have questions yet.</description>
+        <errorConditionFormula>AND( ISNEW() , IsActive__c )</errorConditionFormula>
+        <errorDisplayField>IsActive__c</errorDisplayField>
+        <errorMessage>New module (without questions) cannot be active.</errorMessage>
+    </validationRules>
+</CustomObject>

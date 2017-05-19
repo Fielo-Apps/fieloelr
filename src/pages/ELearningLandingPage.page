@@ -1,0 +1,75 @@
+<apex:page tabStyle="Courses__tab" docType="html-5.0" sidebar="false" controller="ELearningLandingController">
+	<!--  action="{!verifyProgram}" -->
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+	<link rel="stylesheet" href="{!URLFOR($Resource.FieloPLT__FieloSalesforce_Backend, 'lightning/styles/salesforce-lightning-design-system-vf.min.css')}"></link>
+	<link rel="stylesheet" href="{!URLFOR($Resource.FieloPLT__FieloSalesforce_Backend, 'fielo/styles/core.css')}"></link>
+	<link rel="stylesheet" href="{!URLFOR($Resource.FieloPLT__FieloPlt_Salesforce, 'styles/core.css')}"></link>
+	<style type="text/css">
+	.slds-tabs--default .slds-tabs--default__content .slds-table { border-top: none; }
+	</style>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+</head>
+<body>
+	<div class="fielosf fielosf-elearning fielosf-elearning-landing">
+	<!--  HEADER  -->
+	<c:BackendHeaderRecord firstHeading="Courses"
+      secondHeading=""
+      icon="{!URLFOR($Resource.FieloSalesforce_Backend)}/lightning/icons/standard-sprite/svg/symbols.svg#metrics"
+      helpUrl="http://documentation.fielo.com/docs/elearning"
+      parameters="{ 'FieloELR__Program__c' : '{! currentProgram.Id}' }"
+      record=""
+      buttons="{!MID(landingSettings.FieloPLT__Buttons__c,2,LEN(landingSettings.FieloPLT__Buttons__c)-1)}"
+      tools="{!landingCourse.FieloPLT__Tools__c}"
+      truncate="true">
+    	<c:BackEndProgramSelector/>
+    </c:BackendHeaderRecord>
+    <!-- CONTENT -->
+    <div class="fielosf-body">
+      <div class="slds-grid slds-wrap slds-grid--pull-padded">
+        <div class="slds-p-horizontal--small slds-size--2-of-12">
+          <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical fielosf-filter fielosf-view-selector" data-binding="fielosf-elearning-landing--binding">
+            <!-- Status Views -->
+            <h2 class="slds-text-title--caps slds-p-around--medium" id="entity-header">Views</h2>
+            <ul class="fielosf-elearning-landing__status fielosf-filter__list">
+              <apex:repeat value="{!statusViews}" var="st">
+              <li class="fielosf-list__item {! IF ( st.value == currentView, 'slds-is-active', '' ) }">
+                <a data-filters='{"viewName":"{!st.value}"}' class="fielosf-link slds-navigation-list--vertical__action slds-text-link--reset" aria-describedby="entity-header">{!st.label}</a>
+              </li>
+            </apex:repeat>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="slds-p-horizontal--small slds-size--10-of-12">
+        <div class="slds-tabs--default slds-p-around--x-small slds-clearfix">
+          <!-- COURSE -->
+          <div id="courses-panel" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-1__item">
+            <c:RecentRecords namespace="FieloELR" sObjectName="FieloELR__Course__c"
+              title="{!$Label.fieloelr__recent} {!$ObjectType.Course__c.labelPlural}"
+              fieldset="{!landingCourse.FieloPLT__Fieldset__c}"
+              show="true"
+              async="true"
+              dataController="ELearningLandingController.getCourses"
+              dataBinding="fielosf-elearning-landing--binding"
+              dataFilters="{'Program__c':'{!currentProgram.Id}', 'viewName':'{!currentView}'}"
+            />
+            <c:Form namespace="FieloELR" formId="FieloELR__Course__cForm"
+              saveController="{!saveController}"
+              heading="{!$Label.fieloelr__new} {!$ObjectType.Course__c.label}"
+              fieldset="{!newCourse.FieloPLT__Sections__c}"
+              secondaryParameters="{!secondaryParameters}"
+              sObjectName="FieloELR__Course__c"
+              className="fielosf-program-change"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <c:BackendFooter namespace="FieloELR" helpers="'FieloForm','FieloTabs','FieloPaginator','FieloRecentRecords','FieloFilter','FieloELearning'" externalJS="{!URLFOR($Resource.FieloPLT__FieloPlt_Salesforce, 'scripts/core.js')}, {!URLFOR($Resource.FieloElr_Salesforce, 'scripts/core.js')}"/>
+</body>
+</html>
+</apex:page>

@@ -1,0 +1,60 @@
+// Arregla el ancho del tile
+.slds .slds-grid {
+  display: table;
+  width: 100%;
+
+  // Arregla el ancho de la columna para que sea a dos columnas
+  & > .slds-col {
+    display: table-cell;
+
+    .slds-media{
+      display:  table;
+      width: 100%;
+      .slds-media__figure,
+      .slds-media__body {
+        display: table-cell;
+        vertical-align: top;
+      }
+      .slds-media__figure {
+        width: 1%;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+
+// Oculta iconos por incopatibilidad
+.slds .slds-icon use {
+  display: none;
+}
+
+.slds .slds-icon:before {
+  color: #FFFFFF;
+}
+
+// Add
+.slds .slds-icon-custom-57 .slds-icon:before {
+  content: "+";
+}
+
+
+// Delete
+.slds .slds-icon-action-delete .slds-icon:before {
+  content: "-";
+}
+// Delete
+.slds .button__icon--inverse:before {
+  content: "x";
+}
+
+
+@media (max-width: 48em) {
+    // Hace que el tile sea a  una columna1
+  .slds .slds-grid {
+    display: block;
+    & > .slds-col {
+      display: block;
+    }
+  }
+}

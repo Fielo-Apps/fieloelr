@@ -1,0 +1,36 @@
+$lookupButtonWidth: 50px;
+$lookupButtonMarginLeft: 5px;
+
+.fielosf-action-create {
+    .fielosf-body{
+      width: 100%;
+      @media(min-width: 48em) {
+        width: 48em;
+        margin: 0 auto;
+      }
+  }
+  .fielosf-category-lookup .lookupInput {
+    input.slds-input {
+      width: calc(100% - (#{$lookupButtonWidth} + #{$lookupButtonMarginLeft}));
+    }
+    a.slds-input {
+      width: 50px;
+      margin-left: 5px;
+    }
+  }
+  .fielosf-featured-image-lookup .lookupInput, .lookupInput {
+    input.slds-input {
+      width: calc(100% - (#{$lookupButtonWidth} + #{$lookupButtonMarginLeft}));
+    }
+    a.slds-input {
+      width: 50px;
+      margin-left: 5px;
+    }
+  }
+  .slds-checkbox--faux:hover{
+    cursor: pointer;
+  }
+  .slds-checkbox__label{
+    word-break: break-all;
+  }
+}

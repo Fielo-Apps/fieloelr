@@ -1,0 +1,218 @@
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<head>
+  <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+  <!-- <link rel="stylesheet" href="../../assets/styles/salesforce-lightning-design-system-vf.min.css"> -->
+  <link rel="stylesheet" href="../../assets/styles/salesforce-lightning-design-system-scoped.css">
+  <style type="text/css">
+  .slds .slds-button-group .slds-text-heading--label-top {
+    top: -20px;
+    position: absolute;
+  }
+
+  .slds .slds-button-group .slds-text-heading--label-top + * {
+    border-radius: 4px 0 0 4px;
+    border-left: 1px solid #d8dde6;
+  }
+
+  .slds .slds-table--bordered-without-top,
+  .slds .slds-table--bordered-without-top thead th {
+    border-top: none;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="slds">
+    <!--HEADER -->
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <p class="slds-text-heading--label">Reward</p>
+          <div class="slds-grid">
+            <div class="slds-grid slds-type-focus slds-no-space">
+              <h1 class="slds-text-heading--medium slds-truncate" title="My Leads (truncates)">Recent Rewards</h1>
+              <button class="slds-button slds-button--icon-bare slds-shrink-none slds-align-middle slds-m-left--x-small">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                </svg>
+                <span class="slds-assistive-text">View More</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="slds-col slds-no-flex slds-align-bottom">
+          <div class="slds-col slds-has-flexi-truncate">
+          </div>
+          <div class="slds-grid">
+            <div class="slds-button-group slds-m-right--x-large" role="group">
+              <button class="slds-button slds-button--neutral">New</button>
+              <button class="slds-button slds-button--icon-border slds-not-selected">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#chart"></use>
+                </svg>
+                <span class="slds-assistive-text">Reports</span>
+              </button>
+              <button class="slds-button slds-button--icon-more">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#custom_apps"></use>
+                </svg>
+                <span class="slds-assistive-text">Tools</span>
+              </button>
+            </div>
+            <div class="slds-button-group slds-m-right--x-large" role="group">
+              <button class="slds-button slds-button--icon-border slds-not-selected">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#help"></use>
+                </svg>
+                <span class="slds-assistive-text">Help</span>
+              </button>
+              <button class="slds-button slds-button--icon-more">
+                <svg aria-hidden="true" class="slds-button__icon">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#email"></use>
+                </svg>
+                <span class="slds-assistive-text">Feedback</span>
+              </button>
+            </div>
+            <div class="slds-button-group" role="group">
+              <p class="slds-text-heading--label slds-truncate slds-text-heading--label-top" title="Program">Program</p>
+              <button class="slds-button slds-button--neutral">Default</button>
+              <div class="slds-button--last">
+                <button class="slds-button slds-button--icon-border-filled">
+                  <svg aria-hidden="true" class="slds-button__icon">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                  <span class="slds-assistive-text">More Actions</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="slds-text-body--small slds-m-top--x-small">10 items</p>
+    </div>
+    <div class="slds-grid slds-wrap">
+      <div class="slds-col">
+        <!--TABLA DE REGISTROS -->
+        <table class="slds-table slds-table--bordered slds-table--bordered-without-top slds-max-medium-table--stacked-horizontal slds-m-top--medium">
+          <thead>
+            <tr class="slds-text-heading--label">
+              <th class="slds-row-select" scope="col">
+                <label class="slds-checkbox" for="select-all">
+                  <input name="checkbox" type="checkbox" id="select-all" />
+                  <span class="slds-checkbox--faux"></span>
+                  <span class="slds-form-element__label slds-assistive-text">select all</span>
+                </label>
+              </th>
+              <th class="slds-is-sortable" scope="col">
+                <span class="slds-truncate">Opportunity Name</span>
+                <button class="slds-button slds-button--icon-bare">
+                  <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Sort</span>
+                </button>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Account Name</span>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Close Date</span>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Stage</span>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Confidence</span>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Amount</span>
+              </th>
+              <th scope="col">
+                <span class="slds-truncate">Contact</span>
+              </th>
+              <th class="slds-row-action" scope="col">
+                <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small">
+                  <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Show More</span>
+                </button>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="slds-hint-parent">
+              <td class="slds-row-select">
+                <label class="slds-checkbox" for="select-row1">
+                  <input name="select-row1" type="checkbox" id="select-row1" />
+                  <span class="slds-checkbox--faux"></span>
+                  <span class="slds-form-element__label slds-assistive-text">select row1</span>
+                </label>
+              </td>
+              <th data-label="opportunity-name" role="row"><a href="#" class="slds-truncate">Acme 25</a></th>
+              <td data-label="account"><a href="#" class="slds-truncate">Acme</a></td>
+              <td data-label="activity">
+                <span class="slds-truncate">4/14/2015</span>
+              </td>
+              <td data-label="stage">
+                <span class="slds-truncate">Prospecting</span>
+              </td>
+              <td data-label="confidence">
+                <span class="slds-truncate">20%</span>
+              </td>
+              <td data-label="amount">
+                <span class="slds-truncate">$25k</span>
+              </td>
+              <td data-label="contact">
+                <span class="slds-truncate">--</span>
+              </td>
+              <td class="slds-row-action">
+                <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small">
+                  <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Show More</span>
+                </button>
+              </td>
+            </tr>
+            <tr class="slds-hint-parent">
+              <td class="slds-row-select">
+                <label class="slds-checkbox" for="select-row2">
+                  <input name="select-row2" type="checkbox" id="select-row2" />
+                  <span class="slds-checkbox--faux"></span>
+                  <span class="slds-form-element__label slds-assistive-text">select row2</span>
+                </label>
+              </td>
+              <th data-label="opportunity-name" role="row"><a href="#" class="slds-truncate">Rohde Corp 30</a></th>
+              <td data-label="account"><a href="#" class="slds-truncate">Rohde Corp</a></td>
+              <td data-label="activity">
+                <span class="slds-truncate">6/18/2015</span>
+              </td>
+              <td data-label="stage">
+                <span class="slds-truncate">Prospecting</span>
+              </td>
+              <td data-label="confidence">
+                <span class="slds-truncate">40%</span>
+              </td>
+              <td data-label="amount">
+                <span class="slds-truncate">$30k</span>
+              </td>
+              <td data-label="contact"><a href="#" class="slds-truncate">achoi@rohdecorp.com</a></td>
+              <td class="slds-row-action">
+                <button class="slds-button slds-button--icon-border-filled slds-button--icon-x-small">
+                  <svg aria-hidden="true" class="slds-button__icon slds-button__icon--hint slds-button__icon--small">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+                  </svg>
+                  <span class="slds-assistive-text">Show More</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

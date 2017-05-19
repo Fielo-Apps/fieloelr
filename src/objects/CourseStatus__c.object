@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>false</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>false</enableSharing>
+    <enableStreamingApi>false</enableStreamingApi>
+    <fields>
+        <fullName>ApprovedModules__c</fullName>
+        <externalId>false</externalId>
+        <label>Approved Modules</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Course__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Course</label>
+        <referenceTo>Course__c</referenceTo>
+        <relationshipLabel>Courses Status</relationshipLabel>
+        <relationshipName>CoursesStatus</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Key__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT(Course__c, 15) + LEFT(Member__c, 15)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Key</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Member</label>
+        <referenceTo>FieloPLT__Member__c</referenceTo>
+        <relationshipLabel>Courses Status</relationshipLabel>
+        <relationshipName>CoursesStatus</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Progress__c</fullName>
+        <externalId>false</externalId>
+        <formula>ApprovedModules__c / Course__r.ActiveModules__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Progress</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <gender>Feminine</gender>
+    <label>Course Status</label>
+    <nameField>
+        <displayFormat>CS-{0000}</displayFormat>
+        <label>Course Status Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Courses Status</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>ApprovedModulesCanNotBeNull</fullName>
+        <active>true</active>
+        <description>The Approved Modules field cannot be null.</description>
+        <errorConditionFormula>ISBLANK(ApprovedModules__c)</errorConditionFormula>
+        <errorMessage>The Approved Modules cannot be null.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CourseStatusMustBeActive</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(ISPICKVAL(Course__r.Status__c,&quot;Active&quot;))</errorConditionFormula>
+        <errorDisplayField>Course__c</errorDisplayField>
+        <errorMessage>Course Status must be related to a Course with the Status Active</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>MemberRequired</fullName>
+        <active>true</active>
+        <description>The Member is required.</description>
+        <errorConditionFormula>ISNULL(Member__c ) || ISBLANK(Member__c )</errorConditionFormula>
+        <errorDisplayField>Member__c</errorDisplayField>
+        <errorMessage>Member is required.</errorMessage>
+    </validationRules>
+</CustomObject>
