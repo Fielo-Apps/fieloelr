@@ -167,7 +167,7 @@ global with sharing class QuestionService {
 			Database.rollback(sp);
 			throw e;
 		}
-
+		qResponseQuery = (FieloELR__QuestionResponse__c) uow.m_dirtyMapByType.get('FieloELR__QuestionResponse__c').get(qResponseQuery.Id);
 		system.debug(qResponseQuery.NumberOfAttempt__c);
 		QuestionResponseResult qrResult = new QuestionResponseResult(questionResponseWrapper.question, qResponseQuery, questionResponseWrapper.answers);
 		qrResult.setRepeatQuestion(qResponseQuery.IsCorrect__c || qResponseQuery.NumberOfAttempt__c >= qResponseQuery.Question__r.Module__r.QuestionPool__c);
