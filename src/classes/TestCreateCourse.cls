@@ -334,7 +334,7 @@ private class TestCreateCourse{
             }
         } */
 
-    @isTest
+    /*@isTest
         static void ELR_0001_FA16(){
             courses = [SELECT Id,FieloELR__Status__c FROM FieloELR__Course__c WHERE Name = 'Course 2'];
 
@@ -359,7 +359,7 @@ private class TestCreateCourse{
             courses = [SELECT FieloELR__Status__c FROM FieloELR__Course__c WHERE Name = 'Course 3'];
 
             System.assertEquals('Inactive', courses.get(0).FieloELR__Status__c);
-        }
+        }*/
 
     @isTest
         static void ELR_0001_FA18(){

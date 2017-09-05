@@ -1,4 +1,5 @@
 public class CourseStatus extends SObjectDomain {
+    public static Set<Id> processedIds = new Set<Id>();
     
     public static Boolean validateAdminFields = true;
     
@@ -142,6 +143,23 @@ public class CourseStatus extends SObjectDomain {
                 }
             }
         }        
+    }
+
+    public override void onAfterUpdate(Map<Id,SObject> existingRecords) {
+        List<CourseStatus__c> recordsToProcess = new List<CourseStatus__c>();
+        
+        Map<Id,CourseStatus__c> mapExistingRecordsToProcess = new Map<Id,CourseStatus__c>();
+
+        for(CourseStatus__c record : (List<CourseStatus__c>)records){
+            if(!processedIds.contains(record.Id)){
+                recordsToProcess.add(record);
+                mapExistingRecordsToProcess.put(record.Id,(CourseStatus__c)existingRecords.get(record.Id));
+                processedIds.add(record.Id);
+            }
+        }
+        if(!recordsToProcess.isEmpty()){
+            FieloPLT.SObjectService.processRecords(recordsToProcess, mapExistingRecordsToProcess);
+        }
     }
         
     public override void onBeforeDelete() {
