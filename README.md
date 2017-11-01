@@ -6,7 +6,7 @@ La configuración se puede sacar de este [Gist](https://gist.github.com/hugogmg/
 ##Deploy
 <br>
 
-<a href="https://githubsfdeploy.herokuapp.com?owner=FieloIncentiveAutomation&repo=fieloelr&ref=master">
+<a href="https://githubsfdeploy.herokuapp.com?owner=Fielo-Apps&repo=fieloelr&ref=master">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
